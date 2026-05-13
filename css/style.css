@@ -313,64 +313,45 @@ img { max-width: 100%; display: block; }
 .about-text strong { color: var(--text-primary); }
 
 /* === Skills === */
-.skills-wrapper {
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
 }
 
-.skill-category {
-    background: rgba(17, 34, 64, 0.5);
-    border: 1px solid rgba(100, 255, 218, 0.1);
-    border-radius: 12px;
-    padding: 2rem;
-    transition: var(--transition);
+.skill-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: 0.3s var(--ease);
 }
 
-.skill-category:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-color);
-    background: rgba(17, 34, 64, 0.8);
+.skill-item:hover {
+    border-color: var(--accent);
+    background: rgba(124, 92, 252, 0.05);
+    transform: translateY(-5px);
 }
 
-.category-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.category-icon {
+.skill-icon {
     font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
-.category-header h3 {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-heading);
+.skill-item span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
 }
 
-.skill-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+@media (max-width: 768px) {
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-.skill-list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
-    color: var(--text-body);
-}
-
-.skill-list li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
+@media (max-width: 480px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* === Timeline === */
